@@ -2,7 +2,7 @@ require 'scorecard'
 
 describe Scorecard do
   context 'upon initialization' do
-    before(:each) do
+    before do
       @current_game = described_class.new("Mabon")
     end
 
@@ -17,5 +17,26 @@ describe Scorecard do
     it 'starts at the first frame' do
       expect(@current_game.current_frame).to eq 1
     end
+
+    # xit 'starts with an empty scorecard' do
+    #   expect(@current_game.scorecard).to eq {}
+    # end
   end
+
+  context 'playing the game' do
+    let(:game) { described_class.new("Mabon") }
+    # before do
+    #   allow(game).to receive(:gets).and_return("4")
+    # end
+    it 'able to enter your last bowl score and return your total score' do
+      allow(game).to receive(:gets).and_return("4", "0")
+      expect(game.insert_score).to eq 4
+    end
+    it 'able to enter 2 different scores for the same frame and return your total score' do
+      allow(game).to receive(:gets).and_return("3", "5")
+      expect(game.insert_score).to eq 8
+    end
+  end
+  
+
 end
