@@ -69,11 +69,20 @@ describe Scorecard do
       end
 
       context 'first frame is a spare' do
-        it 'applies the spare bonus accordingly' do
+        it 'applies the spare bonus when next turn is spare or less' do
           allow(game).to receive(:gets).and_return("5", "5", "2", "3")
           game.insert_score
           game.insert_score
           expect(game.each_frame_score.first).to eq 12
+        end
+      end
+      
+      context 'first frame is a strike' do
+        it 'applies the strike bonus when next turn is spare or less' do
+          allow(game).to receive(:gets).and_return("10","5","2")
+          game.insert_score
+          game.insert_score
+          expect(game.each_frame_score.first).to eq 17
         end
       end
     end
