@@ -13,9 +13,10 @@ class Scorecard
     t = 1
     frame_score = 0
     while t < 3
-      frame_score = frame_score + gets.chomp.to_i
+      bowl_score = gets.chomp.to_i
+      frame_score = frame_score + bowl_score
+      t == 1 ? @scorecard[:f1a] = bowl_score : @scorecard[:f1b] = bowl_score
       t += 1
-
     end
     @current_score += frame_score
     frame_score
