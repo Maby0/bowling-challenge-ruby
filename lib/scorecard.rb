@@ -9,15 +9,16 @@ class Scorecard
   end
 
   def insert_score
-    t = 1
+    @t = 1
     frame_score = 0
-    while t < 3
+    while @t < 3
       bowl_score = gets.chomp.to_i
       frame_score = frame_score + bowl_score
-      t == 1 ? @scorecard[:f1a] = bowl_score : @scorecard[:f1b] = bowl_score
-      t += 1
+      @t == 1 ? @scorecard[:"#{hash_key_generator}"] = bowl_score : @scorecard[:"#{hash_key_generator}"] = bowl_score
+      @t += 1
     end
     @current_score += frame_score
+    # @current_score = @scorecard.values.sum
     next_frame
     frame_score
     # puts "Frame score: #{frame_score}"
@@ -36,4 +37,9 @@ class Scorecard
 
   #def strike
   #end
+  private
+
+  def hash_key_generator
+    "f#{current_frame}#{@t == 1 ? 'a' : 'b'}"
+  end
 end

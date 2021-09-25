@@ -51,13 +51,30 @@ describe Scorecard do
       end
     end
 
-    context 'after the first frame' do
+    context 'first and second frame' do
       let(:game) { described_class.new("Mabon")}
-      
-      it 'changes to current_frame to the next' do
+
+      it 'changes the current_frame to the next after first frame' do
         allow(game).to receive(:gets).and_return("3", "5")
         game.insert_score
         expect(game.current_frame).to eq 2
+      end
+
+      it 'sums the scores of the first and second frame' do
+        allow(game).to receive(:gets).and_return("3", "5", "8", "1")
+        game.insert_score
+        game.insert_score
+        expect(game.current_score).to eq 17
+      end
+
+      it 'stores the scores of all bowls across both frames' do
+        allow(game).to receive(:gets).and_return("3", "5", "8", "1")
+        game.insert_score
+        game.insert_score
+        expect(game.scorecard[:f1a]).to eq 3
+        expect(game.scorecard[:f1b]).to eq 5
+        expect(game.scorecard[:f2a]).to eq 8
+        expect(game.scorecard[:f2b]).to eq 1
       end
     end
   end
