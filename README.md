@@ -1,4 +1,15 @@
+![Scorecard plan](images/scorecard_plan.png)
+
+
+
+
+
+
+
+
+
 Bowling Challenge in Ruby
+
 =================
 
 * Feel free to use google, your notes, books, etc. but work on your own
