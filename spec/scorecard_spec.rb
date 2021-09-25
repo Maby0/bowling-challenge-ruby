@@ -25,16 +25,21 @@ describe Scorecard do
 
   context 'playing the game' do
     let(:game) { described_class.new("Mabon") }
-    # before do
-    #   allow(game).to receive(:gets).and_return("4")
-    # end
+
     it 'able to enter your last bowl score and return your total score' do
       allow(game).to receive(:gets).and_return("4", "0")
       expect(game.insert_score).to eq 4
     end
+
     it 'able to enter 2 different scores for the same frame and return your total score' do
       allow(game).to receive(:gets).and_return("3", "5")
       expect(game.insert_score).to eq 8
+    end
+
+    it 'stores the current score in current_score' do
+      allow(game).to receive(:gets).and_return("3", "5")
+      game.insert_score
+      expect(game.current_score).to eq 8
     end
   end
   

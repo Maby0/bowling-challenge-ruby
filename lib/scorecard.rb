@@ -5,7 +5,7 @@ class Scorecard
     @player_name = name
     @current_score = 0
     @current_frame = 1
-    @scorecard = Hash.new
+    @scorecard = {}
   end
 
   def insert_score
@@ -15,8 +15,12 @@ class Scorecard
     while t < 3
       frame_score = frame_score + gets.chomp.to_i
       t += 1
+
     end
+    @current_score += frame_score
     frame_score
+    # puts "Frame score: #{frame_score}"
+    # puts "Total score: #{@current_score}"
   end
 
   #def next_frame
