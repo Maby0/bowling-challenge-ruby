@@ -9,7 +9,6 @@ class Scorecard
   end
 
   def insert_score
-    # turn 1 or 2
     t = 1
     frame_score = 0
     while t < 3
@@ -19,13 +18,15 @@ class Scorecard
       t += 1
     end
     @current_score += frame_score
+    next_frame
     frame_score
     # puts "Frame score: #{frame_score}"
     # puts "Total score: #{@current_score}"
   end
 
-  #def next_frame
-  #end
+  def next_frame
+    @current_frame += 1
+  end
 
   #def frame_score(first_bowl, second_bowl=0)
   #end
