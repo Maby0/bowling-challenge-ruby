@@ -296,30 +296,17 @@
           1,
           null,
           1,
-<<<<<<< HEAD
-=======
           3,
           null,
           null,
->>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
           1,
           1,
           1,
           null,
-<<<<<<< HEAD
-          1,
-          11,
-          11,
-          11,
-          11,
-          11,
-          11,
-=======
           null,
           1,
           1,
           1,
->>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
           null,
           null,
           null,
@@ -329,50 +316,6 @@
           null,
           null,
           null,
-<<<<<<< HEAD
-          null,
-          null,
-          null,
-          1,
-          12,
-          null,
-          12,
-          23,
-          12,
-          12,
-          1,
-          null,
-          null,
-          11,
-          null,
-          22,
-          null,
-          null,
-          12,
-          null,
-          12,
-          1,
-          1,
-          11,
-          1,
-          1,
-          null,
-          null,
-          12,
-          1,
-          11,
-          1,
-          null,
-          10,
-          null,
-          null,
-          12,
-          12,
-          12,
-          null,
-          null,
-          null,
-=======
           1,
           1,
           1,
@@ -417,7 +360,6 @@
           0,
           null,
           0,
->>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
           null,
           null,
           null,
@@ -425,17 +367,6 @@
           1,
           null,
           1,
-<<<<<<< HEAD
-          12,
-          null,
-          null,
-          1,
-          17,
-          null,
-          null,
-          1,
-          2,
-=======
           2,
           2,
           null,
@@ -446,7 +377,6 @@
           null,
           1,
           1,
->>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
           null,
           null,
           1,
@@ -456,10 +386,6 @@
         ]
       }
     },
-<<<<<<< HEAD
-    "timestamp": 1632583981
-=======
     "timestamp": 1632734567
->>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
   }
 }
