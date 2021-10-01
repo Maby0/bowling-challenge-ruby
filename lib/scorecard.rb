@@ -1,5 +1,33 @@
+require_relative './frame'
+
 class Scorecard
+<<<<<<< HEAD
   attr_reader :spare_active, :player_name, :current_total_score, :current_frame, :all_turns, :each_frame_score
+=======
+  def self.start_game(name)
+    @game = Scorecard.new(name)
+    @game.frames << Frame.new
+  end
+
+  def self.current_game
+    @game
+  end
+
+  def self.bowl
+    if @game.frames_played == 10 && @game.frames[-1].frame_finished
+      "The game has ended. Your final score was #{@game.score}"
+    else
+      if @game.frames[-1].frame_finished
+        @game.next_frame
+        @game.frames[-1].bowl
+      else
+        @game.frames[-1].bowl
+      end
+    end
+  end
+
+  attr_reader :name, :frames
+>>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
 
   STARTING_FRAME = 1
   MAX_FRAMES = 10
@@ -7,6 +35,7 @@ class Scorecard
   STRIKE = 10
   
   def initialize(name)
+<<<<<<< HEAD
     @player_name = name
     @current_frame = STARTING_FRAME
     @all_turns = {}
@@ -84,5 +113,21 @@ class Scorecard
 
   def took_2_turns_this_frame?
     current_frame_turns.count == 2
+=======
+    @name = name
+    @frames = []
+  end
+
+  def score
+    @frames.map { |frame| frame.frame_score }.sum
+  end
+
+  def next_frame
+    @frames << Frame.new
+  end
+
+  def frames_played
+    @frames.count
+>>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
   end
 end

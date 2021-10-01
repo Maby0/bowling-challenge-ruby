@@ -1,17 +1,43 @@
 require 'scorecard'
 
 describe Scorecard do
+<<<<<<< HEAD
   context 'upon initialization' do
     before do
       @current_game = described_class.new("Mabon")
     end
+=======
+  let(:game) { Scorecard.current_game }
+  # let(:frame) { Frame.new }
+>>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
 
-    it 'has a player name' do
-      expect(@current_game.player_name).to eq "Mabon"
+  describe '.start_game' do
+    it 'creates an instance of Scorecard and passes a new frame instance into @frames' do
+      Scorecard.start_game("Mabon")
+      # frameobj = object_double(Frame)
+      # allow(frameobj).to receive(:new).and_return(frame)
+      expect(game).to be_a Scorecard
+      expect(game.name).to eq "Mabon"
+      expect(game.frames.count).to eq 1
+      # expect(game.frames).to include frame
     end
+  end
 
+<<<<<<< HEAD
     it 'starts at the first frame' do
       expect(@current_game.current_frame).to eq 1
+=======
+  # describe '.bowl' do
+  #   it 'initiates a bowl if frame is not finished' do
+  #     Scorecard.start_game("Mabon")
+  #     expect(Scorecard.bowl)
+
+  describe 'frames_played' do
+    it 'returns the number of frames played so far' do
+      Scorecard.start_game("Mabon")
+      game.next_frame
+      expect(game.frames_played).to eq 2
+>>>>>>> dcc2b111c19e1dc9210de7f290f0e715d9e8c5b4
     end
 
     it 'starts with an empty all_turns' do
@@ -96,4 +122,15 @@ describe Scorecard do
     #   end
     # end
   end
+
+  # describe 'score' do
+  #   it 'returns the score total score across all frames played' do
+  #     # allow(frame).to receive(:frame_score).and_return(11)
+  #     allow(frame).to receive(:gets).and_return("5", "6")
+  #     Scorecard.start_game("Mabon")
+  #     Scorecard.bowl
+  #     Scorecard.bowl
+  #     expect(game.score).to eq 11
+  #   end
+  # end
 end
