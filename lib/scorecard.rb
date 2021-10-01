@@ -24,11 +24,6 @@ class Scorecard
   end
 
   attr_reader :name, :frames
-
-  STARTING_FRAME = 1
-  MAX_FRAMES = 10
-  TEN_PINS = 10
-  STRIKE = 10
   
   def initialize(name)
     @name = name
